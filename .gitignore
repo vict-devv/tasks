@@ -1,0 +1,26 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binaries
+*.test
+
+# Go workspace files
+/bin/
+/pkg/
+
+# Dependency directories (for older Go versions or specific setups)
+# /vendor/
+
+# Local configuration files
+.env
+.local/
+
+# Editor/IDE specific files
+.idea/
+.vscode/
+*.swp
+*~
