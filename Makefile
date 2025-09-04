@@ -22,4 +22,8 @@ migrate-local-down:
 	@echo "Reverting local database migrations..."
 	migrate -path "./internal/db/migrations" -database "postgres://admin:123456@localhost:5432/tasks_db?sslmode=disable" down
 
-.PHONY: build run clean test migrate-local-up migrate-local-down
+migrate-local-force:
+	@echo "Forcing migration to specific version: ${version}..."
+	migrate -path "./internal/db/migrations" -database "postgres://admin:123456@localhost:5432/tasks_db?sslmode=disable" force ${version}
+
+.PHONY: build run clean test migrate-local-up migrate-local-down migrate-local-force
