@@ -5,8 +5,8 @@ import "github.com/spf13/viper"
 
 // Config holds the entire configuration for the application.
 type Config struct {
-	Server   ServerConfig   `mapstructure:"server"`
-	Database DatabaseConfig `mapstructure:"database"`
+	Server   Server   `mapstructure:"server"`
+	Database Database `mapstructure:"database"`
 }
 
 // New initializes and returns a new Config instance.

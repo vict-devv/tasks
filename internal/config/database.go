@@ -5,8 +5,8 @@ import (
 	"github.com/vict-devv/tasks/internal/constants"
 )
 
-// DatabaseConfig holds the database-related configuration.
-type DatabaseConfig struct {
+// Database holds the database-related configuration.
+type Database struct {
 	Host     string `mapstructure:"host"`
 	Port     uint   `mapstructure:"port"`
 	User     string `mapstructure:"user"`

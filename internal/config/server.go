@@ -5,8 +5,8 @@ import (
 	"github.com/vict-devv/tasks/internal/constants"
 )
 
-// ServerConfig holds the server-related configuration.
-type ServerConfig struct {
+// Server holds the server-related configuration.
+type Server struct {
 	Host string `mapstructure:"host"`
 	Port uint   `mapstructure:"port"`
 }
