@@ -34,7 +34,7 @@ Or use [**Docker**](https://www.docker.com/) by running the following command:
    For example, to override the server port, first you need to add the `TASKS` prefix, then you
    can set the `TASKS_SERVER_PORT` environment variable.
    ```bash
-   export TASKS_SERVER_PORT=8080 # or TASKS_SERVER_PORT=8080 make run
+   export TASKS_SERVER_PORT=3000 # or TASKS_SERVER_PORT=3000 make run
    ```
 4. [Optional] You can leave the config file in the root directory or move it inside the
 `internal/config/` folder.
@@ -45,7 +45,7 @@ In the abssence of any configuration field, the application will use the followi
 | Config Key          | Default Value        | Description                       |
 |---------------------|----------------------|-----------------------------------|
 | SERVER_HOST         | localhost            | Server host                       |
-| SERVER_PORT         | 3000                 | Port on which the server runs     |
+| SERVER_PORT         | 8080                 | Port on which the server runs     |
 | DB_HOST             | localhost            | Database host                     |
 | DB_PORT             | 5432                 | Database port                     |
 | DB_USER             | admin                | Database user                     |
