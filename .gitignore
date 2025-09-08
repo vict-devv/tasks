@@ -24,3 +24,6 @@
 .vscode/
 *.swp
 *~
+
+# Config Files
+config.yaml

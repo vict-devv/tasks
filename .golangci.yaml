@@ -84,6 +84,7 @@ linters:
             - $gostd # allow all standard library packages
             - github.com/vict-devv/tasks
             - github.com/gofiber/fiber/v2
+            - github.com/spf13/viper
     errcheck:
       # Report about not checking of errors in type assertions: `a := b.(MyStruct)`.
       check-type-assertions: true
