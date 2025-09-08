@@ -1,6 +1,9 @@
 package config
 
-import "github.com/spf13/viper"
+import (
+	"github.com/spf13/viper"
+	"github.com/vict-devv/tasks/internal/constants"
+)
 
 // DatabaseConfig holds the database-related configuration.
 type DatabaseConfig struct {
@@ -13,10 +16,10 @@ type DatabaseConfig struct {
 }
 
 func setDatabaseConfigDefaults() {
-	viper.SetDefault("DatabaseConfig.Host", "localhost")
-	viper.SetDefault("DatabaseConfig.Port", 5432)
-	viper.SetDefault("DatabaseConfig.User", "admin")
-	viper.SetDefault("DatabaseConfig.Password", "123456")
-	viper.SetDefault("DatabaseConfig.Name", "tasks_db")
+	viper.SetDefault("DatabaseConfig.Host", constants.ConfigDatabaseDefaultHost)
+	viper.SetDefault("DatabaseConfig.Port", constants.ConfigDatabaseDefaultPort)
+	viper.SetDefault("DatabaseConfig.User", constants.ConfigDatabaseDefaultUser)
+	viper.SetDefault("DatabaseConfig.Password", constants.ConfigDatabaseDefaultPassword)
+	viper.SetDefault("DatabaseConfig.Name", constants.ConfigDatabaseDefaultName)
 	viper.SetDefault("DatabaseConfig.SSLMode", false)
 }

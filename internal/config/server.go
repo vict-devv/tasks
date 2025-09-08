@@ -1,6 +1,9 @@
 package config
 
-import "github.com/spf13/viper"
+import (
+	"github.com/spf13/viper"
+	"github.com/vict-devv/tasks/internal/constants"
+)
 
 // ServerConfig holds the server-related configuration.
 type ServerConfig struct {
@@ -9,6 +12,6 @@ type ServerConfig struct {
 }
 
 func setServerConfigDefaults() {
-	viper.SetDefault("ServerConfig.Host", "localhost")
-	viper.SetDefault("ServerConfig.Port", 8080)
+	viper.SetDefault("ServerConfig.Host", constants.ConfigServerDefaultHost)
+	viper.SetDefault("ServerConfig.Port", constants.ConfigServerDefaultPort)
 }
