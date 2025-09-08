@@ -6,7 +6,7 @@ const (
 	ConfigEnvPrefix = "TASKS"
 	// Server configuration defaults.
 	ConfigServerDefaultHost = "localhost"
-	ConfigServerDefaultPort = 5432
+	ConfigServerDefaultPort = 8080
 	// Database configuration defaults.
 	ConfigDatabaseDefaultHost     = "localhost"
 	ConfigDatabaseDefaultPort     = 5432

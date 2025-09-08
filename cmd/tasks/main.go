@@ -11,9 +11,9 @@ import (
 
 func main() {
 	cfg := config.New()
-	port := fmt.Sprintf(":%d", cfg.Server.Port)
+	addr := fmt.Sprintf("%s:%d", cfg.Database.Host, cfg.Server.Port)
 	app := api.InitServer()
-	if err := app.Listen(port); err != nil {
+	if err := app.Listen(addr); err != nil {
 		// TODO: implement Logger and logging the Listen error
 		os.Exit(1)
 	}
