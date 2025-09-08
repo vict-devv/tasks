@@ -1,7 +1,12 @@
 // Package config provides configuration management for the application.
 package config
 
-import "github.com/spf13/viper"
+import (
+	"strings"
+
+	"github.com/spf13/viper"
+	"github.com/vict-devv/tasks/internal/constants"
+)
 
 // Config holds the entire configuration for the application.
 type Config struct {
@@ -22,6 +27,8 @@ func New() *Config {
 	// TODO: implement Logger and logging the ReadInConfig error
 	_ = viper.ReadInConfig()
 
+	setAutomaticEnv()
+
 	if err := viper.Unmarshal(cfg); err != nil {
 		panic("Failed to unmarshal config: " + err.Error())
 	}
@@ -32,4 +39,11 @@ func New() *Config {
 func setConfigDefault() {
 	setServerConfigDefaults()
 	setDatabaseConfigDefaults()
+}
+
+func setAutomaticEnv() {
+	replacer := strings.NewReplacer(".", "_")
+	viper.SetEnvKeyReplacer(replacer)
+	viper.SetEnvPrefix(constants.ConfigEnvPrefix)
+	viper.AutomaticEnv()
 }

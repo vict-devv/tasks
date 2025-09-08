@@ -3,6 +3,7 @@ package constants
 
 // Configuration-related constants.
 const (
+	ConfigEnvPrefix = "TASKS"
 	// Server configuration defaults.
 	ConfigServerDefaultHost = "localhost"
 	ConfigServerDefaultPort = 5432
