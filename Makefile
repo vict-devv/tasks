@@ -21,12 +21,12 @@ test:
 .PHONY: lint
 lint:
 	@echo "Running linter..."
-	golangci-lint run
+	golangci-lint-v2 run
 
 .PHONY: fmt
 fmt:
 	@echo "Formatting code..."
-	golangci-lint run --fix
+	golangci-lint-v2 run --fix
 
 .PHONY: migrate-local-up
 migrate-local-up:
