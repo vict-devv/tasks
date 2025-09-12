@@ -130,8 +130,6 @@ formatters:
     - swaggo # formats swaggo comments
 
   settings:
-    goimports:
-      local-prefixes: github.com/vict-devv/tasks
     golines:
       line-length: 120
       
