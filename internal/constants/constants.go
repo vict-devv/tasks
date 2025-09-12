@@ -14,3 +14,11 @@ const (
 	ConfigDatabaseDefaultPassword = "123456"
 	ConfigDatabaseDefaultName     = "tasks_db"
 )
+
+// Logging-related constants.
+const (
+	LogAttributePackage = "package"
+	// Packages names for logging.
+	LogPackageMain   = "main"
+	LogPackageConfig = "config"
+)

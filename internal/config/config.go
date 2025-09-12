@@ -6,6 +6,7 @@ import (
 
 	"github.com/spf13/viper"
 	"github.com/vict-devv/tasks/internal/constants"
+	"github.com/vict-devv/tasks/internal/logger"
 )
 
 // Config holds the entire configuration for the application.
@@ -16,6 +17,9 @@ type Config struct {
 
 // New initializes and returns a new Config instance.
 func New() *Config {
+	logger := logger.NewStandardLogger()
+	logger.Debug(constants.LogPackageConfig, "Loading configuration")
+
 	cfg := &Config{}
 	setConfigDefault()
 
@@ -24,8 +28,10 @@ func New() *Config {
 	viper.AddConfigPath(".")
 	viper.AddConfigPath("./internal/config")
 
-	// TODO: implement Logger and logging the ReadInConfig error
-	_ = viper.ReadInConfig()
+	if err := viper.ReadInConfig(); err != nil {
+		logger.
+			ErrorF(constants.LogPackageConfig, "Failed to read config file: %v", err)
+	}
 
 	setAutomaticEnv()
 

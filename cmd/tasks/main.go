@@ -3,18 +3,22 @@ package main
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/vict-devv/tasks/api"
 	"github.com/vict-devv/tasks/internal/config"
+	"github.com/vict-devv/tasks/internal/constants"
+	"github.com/vict-devv/tasks/internal/logger"
 )
 
 func main() {
 	cfg := config.New()
+	logger := logger.NewStandardLogger()
+
 	addr := fmt.Sprintf("%s:%d", cfg.Database.Host, cfg.Server.Port)
 	app := api.InitServer()
+
+	logger.Info(constants.LogPackageMain, "Starting server")
 	if err := app.Listen(addr); err != nil {
-		// TODO: implement Logger and logging the Listen error
-		os.Exit(1)
+		logger.Fatalf(constants.LogPackageMain, "Server has stopped with error: %w", err)
 	}
 }
