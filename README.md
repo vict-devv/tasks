@@ -36,7 +36,7 @@ Or use [**Docker**](https://www.docker.com/) by running the following command:
    ```bash
    export TASKS_SERVER_PORT=3000 # or TASKS_SERVER_PORT=3000 make run
    ```
-4. [Optional] You can leave the config file in the root directory or move it inside the
+4. [*Optional*] You can leave the config file in the root directory or move it inside the
 `internal/config/` folder.
 
 ### Configuration Default Values
