@@ -1,17 +1,17 @@
 .PHONY: build
 build:
 	@echo "Building project..."
-	go build -o bin/tasks cmd/tasks/main.go
+	go build -o ./bin/tasks-api cmd/tasks-api/main.go
 
 .PHONY: run
 run: build
 	@echo "Building and Running project..."
-	./bin/tasks
+	./bin/tasks-api
 
 .PHONY: clean
 clean:
 	@echo "Cleaning project..."
-	rm -rf bin/
+	rm -rf ./bin/
 
 .PHONY: test
 test:

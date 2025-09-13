@@ -22,3 +22,12 @@ func main() {
 		logger.Fatalf(constants.LogPackageMain, "Server has stopped with error: %w", err)
 	}
 }
+
+// TODO:
+// - [ ] rename tasks folder in cmd to tasks-api
+// - [ ] create Dockerfile, Dockerignore and Docker-compose files
+// - [ ] implement graceful shutdown
+// - [ ] implement more logging
+// - [ ] implement tests
+// - [ ] implement CI/CD
+// - [ ] implement more features
