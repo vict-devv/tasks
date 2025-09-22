@@ -52,3 +52,7 @@ migrate-local-down-steps:
 migrate-local-force:
 	@echo "Forcing migration to specific version: ${version}..."
 	migrate -path "./internal/db/migrations" -database "postgres://admin:123456@localhost:5432/tasks_db?sslmode=disable" force ${version}
+
+.PHONY: sqlc
+sqlc:
+	sqlc generate -f internal/db/sqlc.yaml
