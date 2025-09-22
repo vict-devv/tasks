@@ -27,7 +27,7 @@ func (c *CustomLogger) Debug(pkg, msg string) {
 // Debugf implements Logger.
 // Same as Debug but for formatted messages.
 func (c *CustomLogger) Debugf(pkg, format string, args ...any) {
-	c.logger.Debug(fmt.Sprintf(format, args...))
+	c.logger.With(constants.LogAttributePackage, pkg).Debug(fmt.Sprintf(format, args...))
 }
 
 // Error implements Logger.
