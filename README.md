@@ -54,7 +54,11 @@ In the abssence of any configuration field, the application will use the followi
    ```bash
    make migrate-local-down
    ```
-6. [*Optional*] You can check the `Makefile` for other available database related commands.
+6. [*Optional*] If you make changes on SQLC's queries or in any migrations files,
+   don't forget to regenerate the SQLC code by running:
+   ```bash
+   make sqlc
+   ```
 
 ### Application Setup
 If you want to run this application locally, make sure to setup your database (and app's configuration)
@@ -77,12 +81,21 @@ It will download the image and start the container bound to the default port 808
 Access *http://localhost:8080/health* on your browser to check if the application is running healthy.
 It will return a basic *Ok* status.
 
+### Makefile
+As you can see in the previous sections, some useful actions are available through the `make` terminal command.
+
+Linting, formatting, running, testing, and many other actions are listed there.
+Please check the `Makefile` for more information.
+
 ## Tools
 - [Go](https://golang.org/) - Programming language
 - [PostgreSQL](https://www.postgresql.org/) - Database
 - [go-migrate](https://github.com/golang-migrate/migrate) - Database Migration tool
-- [Docker](https://www.docker.com/) - Containerization platform
-- [Make](https://www.gnu.org/software/make/) - Build automation tool
+- [sqlc](https://docs.sqlc.dev/en/latest/index.html) - Code Generation tool that compiles SQL queries into Go
+  (check `internal/db/sqlc.yaml`)
+- [Docker](https://www.docker.com/) - Containerization platform (check `Dockerfile`)
+- [Make](https://www.gnu.org/software/make/) - Build automation tool (check `Makefile`)
+- [golangci-lint](https://golangci-lint.run) - Powerful Golang linter (check `.golangci.yaml`)
 
 ## Third-Party Libraries
 - [viper](https://github.com/spf13/viper) - Configuration management
